@@ -4,7 +4,7 @@
     "description": "A tasks kanban built using React, Typescript, Redux, Socket.io and Express",
     "type": "module",
     "scripts": {
-        "start": "concurrently \"npm run back\" \"npm run front\"",
+        "start": "node app.js",
         "back": "nodemon app.js",
         "front": "npm start --prefix views",
         "test": "echo \"Error: no test specified\" && exit 1"
