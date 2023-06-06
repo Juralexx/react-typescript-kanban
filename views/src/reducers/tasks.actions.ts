@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Dispatch } from "redux";
-import { TaskProps, UserProps } from "types/types";
+import { TaskProps } from "types/types";
 
 /**
  * Get tasks
