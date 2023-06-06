@@ -82,20 +82,20 @@ const CreateTask: React.FC<Props> = ({ user }) => {
 
     return (
         <Modal open={true} setOpen={() => navigate(`/`)}>
-            <h2>Créer une nouvelle tâche</h2>
+            <h2>Add new task</h2>
             <div className="modal_nav">
                 <div className={`modal_nav-item ${addClass(navbar === 1, "active")}`} onClick={() => setNavbar(1)}>
                     Description
                 </div>
                 <div className={`modal_nav-item ${addClass(navbar === 2, "active")}`} onClick={() => setNavbar(2)}>
-                    Membres
+                    Members
                 </div>
             </div>
 
             <TaskModalContainer>
                 {navbar === 1 ? (
                     <React.Fragment>
-                        <div className="input__title">Titre de la tâche</div>
+                        <div className="input__title">Task title</div>
                         <ClassicInput
                             type="text"
                             className="full"
@@ -112,7 +112,7 @@ const CreateTask: React.FC<Props> = ({ user }) => {
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDatas(data => ({ ...data, description: e.target.value }))}
                         />
 
-                        <div className="input__title mr-4">Date de fin</div>
+                        <div className="input__title mr-4">End date</div>
                         <ClassicInput
                             type="text"
                             className="full"
@@ -146,7 +146,7 @@ const CreateTask: React.FC<Props> = ({ user }) => {
                                         Important
                                     </div>
                                     <div onClick={() => setDatas(data => ({ ...data, status: "priority" }))}>
-                                        Prioritaire
+                                        Major
                                     </div>
                                 </DropdownInput>
                             </div>
@@ -158,13 +158,13 @@ const CreateTask: React.FC<Props> = ({ user }) => {
                                     position='top'
                                 >
                                     <div onClick={() => setDatas(data => ({ ...data, state: "todo" }))}>
-                                        À traiter
+                                        Todo
                                     </div>
                                     <div onClick={() => setDatas(data => ({ ...data, state: "in progress" }))}>
-                                        En cours
+                                        In progress
                                     </div>
                                     <div onClick={() => setDatas(data => ({ ...data, state: "done" }))}>
-                                        Terminée
+                                        Done
                                     </div>
                                 </DropdownInput>
                             </div>
@@ -216,7 +216,7 @@ const CreateTask: React.FC<Props> = ({ user }) => {
                     disabled={datas.title === "" || datas.title === undefined}
                     onClick={newTask}
                 >
-                    Enregistrer
+                    Save
                 </Button>
             </TaskModalContainer>
         </Modal>

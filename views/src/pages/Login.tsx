@@ -18,23 +18,23 @@ const Login: React.FC<LoginProps> = ({ uid }) => {
 
     return (
         <SignContainer>
-            <Head title='Connexion' />
+            <Head title='Login' />
             <div className="sign-container-inner">
                 <div className="sign-card">
                     {searchParams.get('registered') &&
                         <p className="successfully-registered">
-                            Votre compte a bien été créé <b>{searchParams.get('user')}</b> ! <br /> Veuillez vous connecter.
+                            Your account has been created successfully <b>{searchParams.get('user')}</b> ! <br /> Please login.
                         </p>
                     }
                     <div className='random-picture'>
                         <img src='/img/random-user.png' alt="" />
                     </div>
-                    <h1>Connexion</h1>
+                    <h1>Login</h1>
                     <SignInForm />
                     <div className="sign-card-bottom">
-                        Par encore de compte ?
+                        No account yet ?
                         <StringButton className="ml-2">
-                            <Link to="/register">Inscription</Link>
+                            <Link to="/register">Register</Link>
                         </StringButton>
                     </div>
                 </div>

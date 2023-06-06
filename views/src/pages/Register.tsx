@@ -17,18 +17,18 @@ const Register: React.FC<RegisterProps> = ({ uid }) => {
 
     return (
         <SignContainer>
-            <Head title='Inscription' />
+            <Head title='Register' />
             <div className="sign-container-inner">
                 <div className="sign-card">
                     <div className='random-picture'>
                         <img src='/img/random-user.png' alt="" />
                     </div>
-                    <h1>Inscription</h1>
+                    <h1>Register</h1>
                     <SignUpForm />
                     <div className="sign-card-bottom">
-                        Déjà un compte ?
+                        Already have an account ?
                         <StringButton className="ml-2">
-                            <Link to="/login">Connexion</Link>
+                            <Link to="/login">Login</Link>
                         </StringButton>
                     </div>
                 </div>

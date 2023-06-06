@@ -95,7 +95,7 @@ const App: React.FC = () => {
                                         <div className='kanban__header-buttons'>
                                             <TextButton className="btn_icon_start">
                                                 <Link to={isAuthenticated(uid, 'task/create')}>
-                                                    <Icon name="Plus" /> Ajouter une tâche
+                                                    <Icon name="Plus" /> Add task
                                                 </Link>
                                             </TextButton>
                                         </div>
@@ -140,7 +140,7 @@ const App: React.FC = () => {
                             path="login"
                             element={
                                 <React.Fragment>
-                                    <Head title="Connexion" />
+                                    <Head title="Login" />
                                     <Login uid={uid} />
                                 </React.Fragment>
                             } />

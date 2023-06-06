@@ -34,19 +34,19 @@ const UpdateTask: React.FC<Props> = ({ task, user }) => {
 
     return (
         <Modal open={true} onClose={() => navigate('/')}>
-            <h2>Modifier la tâche</h2>
+            <h2>Updated task</h2>
             <div className="modal_nav">
                 <div className={`modal_nav-item ${addClass(navbar === 1, "active")}`} onClick={() => setNavbar(1)}>
                     Description
                 </div>
                 <div className={`modal_nav-item ${addClass(navbar === 2, "active")}`} onClick={() => setNavbar(2)}>
-                    Membres
+                    Members
                 </div>
             </div>
             <TaskModalContainer>
                 {navbar === 1 ? (
                     <React.Fragment>
-                        <div className="input__title">Titre de la tâche</div>
+                        <div className="input__title">Task title</div>
                         <ClassicInput
                             type="text"
                             className="full"
@@ -61,7 +61,7 @@ const UpdateTask: React.FC<Props> = ({ task, user }) => {
                             value={updatedTask.description}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUpdatedTask(prevState => ({ ...prevState, description: e.target.value }))}
                         />
-                        <div className="input__title">Date de fin</div>
+                        <div className="input__title">End date</div>
                         <ClassicInput
                             type="text"
                             className="full"
@@ -81,7 +81,7 @@ const UpdateTask: React.FC<Props> = ({ task, user }) => {
                         />
                         <div className="double__inputs-container">
                             <div>
-                                <div className="input__title">État</div>
+                                <div className="input__title">State</div>
                                 <DropdownInput
                                     readOnly
                                     value={statusToString(updatedTask.status)}
@@ -94,7 +94,7 @@ const UpdateTask: React.FC<Props> = ({ task, user }) => {
                                         Important
                                     </div>
                                     <div onClick={() => setUpdatedTask(prevState => ({ ...prevState, status: "priority" }))}>
-                                        Prioritaire
+                                        Major
                                     </div>
                                 </DropdownInput>
                             </div>
@@ -106,13 +106,13 @@ const UpdateTask: React.FC<Props> = ({ task, user }) => {
                                     position='top'
                                 >
                                     <div onClick={() => setUpdatedTask(prevState => ({ ...prevState, state: "todo" }))}>
-                                        À traiter
+                                        Todo
                                     </div>
                                     <div onClick={() => setUpdatedTask(prevState => ({ ...prevState, state: "in progress" }))}>
-                                        En cours
+                                        In progress
                                     </div>
                                     <div onClick={() => setUpdatedTask(prevState => ({ ...prevState, state: "done" }))}>
-                                        Terminée
+                                        Done
                                     </div>
                                 </DropdownInput>
                             </div>
@@ -163,7 +163,7 @@ const UpdateTask: React.FC<Props> = ({ task, user }) => {
                 )}
                 <div className='btn_container'>
                     <TextButton onClick={() => goBack()}>
-                        Annuler
+                        Cancel
                     </TextButton>
                     <Button className="sm:ml-2"
                         disabled={updatedTask.title === "" || updatedTask.title === undefined}
@@ -172,7 +172,7 @@ const UpdateTask: React.FC<Props> = ({ task, user }) => {
                             navigate(`/`)
                         }}
                     >
-                        Enregistrer
+                        Save
                     </Button>
                 </div>
             </TaskModalContainer>

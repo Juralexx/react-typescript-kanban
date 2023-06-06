@@ -233,13 +233,13 @@ export const stateToBackground = (element) => {
 export const stateToString = (element) => {
     switch (element) {
         case "todo":
-            return "À traiter"
+            return "Todo"
         case "in progress":
-            return "En cours"
+            return "In progress"
         case "done":
-            return "Terminée"
+            return "Done"
         default:
-            return "En cours"
+            return "In progress"
     }
 }
 

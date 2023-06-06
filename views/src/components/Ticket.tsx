@@ -49,16 +49,16 @@ const Ticket = ({ task, selectedTask, user, dragged, uniqueKey }: Props) => {
                     }
                     <ToolsMenu>
                         <Link to={isAuthenticated(user._id, `/task/${task._id}`)}>
-                            Voir
+                            See
                         </Link>
                         <Link to={isAuthenticated(user._id, `/task/${task._id}/update`)}>
-                            Modifier
+                            Update
                         </Link>
                         <Link to={isAuthenticated(user._id, `/task/${task._id}/?action=comment`)}>
-                            Commenter
+                            Comment
                         </Link>
                         <div onClick={() => setWarning(uniqueKey)}>
-                            Supprimer
+                            Delete
                         </div>
                     </ToolsMenu>
                 </div>
@@ -67,7 +67,7 @@ const Ticket = ({ task, selectedTask, user, dragged, uniqueKey }: Props) => {
                 {task.title}
             </Link>
             <div className="kanban__ticket-description">
-                {task.description ? task.description : <em>Aucune description</em>}
+                {task.description ? task.description : <em>No description</em>}
             </div>
             <div className="kanban__ticket-bottom">
                 {task.comments!.length > 0 &&
@@ -90,9 +90,9 @@ const Ticket = ({ task, selectedTask, user, dragged, uniqueKey }: Props) => {
             </div>
             {Object.keys(selectedTask).length > 0 &&
                 <Warning
-                    title={`Supprimer la tâche suivante : ${selectedTask.title} ?`}
-                    text="Cette action est irréversible."
-                    validateBtn="Supprimer"
+                    title={`Delete task : ${selectedTask.title} ?`}
+                    text="This action is irreversible."
+                    validateBtn="Delete"
                     open={warning === uniqueKey}
                     setOpen={setWarning}
                     onValidate={() => removeTask(selectedTask, allUsers, user, websocket, dispatch)}

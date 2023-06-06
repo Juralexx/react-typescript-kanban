@@ -52,7 +52,7 @@ const Kanban: React.FC<Props> = ({ user }: Props) => {
                                         </div>
                                         <ToolsMenu>
                                             <Link to={isAuthenticated(user._id, `/task/create/?state=${name}`)}>
-                                                Ajouter une tâche « {stateToString(name)} »
+                                                Add « {stateToString(name)} » task
                                             </Link>
                                         </ToolsMenu>
                                     </div>
@@ -88,7 +88,7 @@ const Kanban: React.FC<Props> = ({ user }: Props) => {
                                     ) : (
                                         <div className="empty__content">
                                             <Icon name="Clipboard" className="w-9 h-9 mb-2" />
-                                            <div>Vous n'avez aucunes tâches <span>{stateToString(name)}.</span></div>
+                                            <div>No <span>{stateToString(name)} task.</span></div>
                                         </div>
                                     )}
                                     <Link to={isAuthenticated(user._id, `/task/create/?state=${name}`)} className='__add'>

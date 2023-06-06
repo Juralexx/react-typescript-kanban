@@ -78,10 +78,10 @@ const TaskModal: React.FC<Props> = ({ user }) => {
                                     <div className="task-modal-description">{task.description}</div>
                                     {comment.state &&
                                         <div className="add-comment-container">
-                                            <div className="mb-2">Commentaire</div>
+                                            <div className="mb-2">Comment</div>
                                             <Textarea
                                                 useRef={textareaRef}
-                                                placeholder="Ajouter un commentaire..."
+                                                placeholder="Add comment..."
                                                 value={comment.text}
                                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setComment(prevState => ({ ...prevState, text: e.target.value }))}
                                             />
@@ -90,11 +90,11 @@ const TaskModal: React.FC<Props> = ({ user }) => {
                                     {!comment.state ? (
                                         <div className="btn_container">
                                             <TextButton className="mr-2" onClick={() => setComment(prevState => ({ ...prevState, state: true }))}>
-                                                Commenter
+                                                Comment
                                             </TextButton>
                                             <Button>
                                                 <Link to={isAuthenticated(user?._id, 'update')}>
-                                                    Modifier
+                                                    Update
                                                 </Link>
                                             </Button>
                                         </div>
@@ -104,10 +104,10 @@ const TaskModal: React.FC<Props> = ({ user }) => {
                                                 handleComment(comment, task, user, allUsers, websocket, dispatch)
                                                 setComment({ state: false, text: "" })
                                             }}>
-                                                Enregistrer
+                                                Save
                                             </Button>
                                             <TextButton onClick={() => setComment(prevState => ({ ...prevState, state: false }))}>
-                                                Annuler
+                                                Cancel
                                             </TextButton>
                                         </div>
                                     )}
@@ -131,7 +131,7 @@ const TaskModal: React.FC<Props> = ({ user }) => {
                                                 )
                                             })
                                         ) : (
-                                            <div className="empty-array">Aucun commentaire pour le moment</div>
+                                            <div className="empty-array">No comment yet</div>
                                         )}
                                     </div>
                                 </React.Fragment>

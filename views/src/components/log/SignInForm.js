@@ -88,7 +88,7 @@ const SignInForm = () => {
                 clean={() => setError({ element: "", error: "" })}
             />
             <LoadingButton className="mt-6 w-full" type="submit" loadingConditions={isLoading}>
-                Connexion
+                Login
             </LoadingButton>
         </form>
     );

@@ -55,7 +55,7 @@ const Navbar: React.FC<Props> = ({ user, uid }) => {
                         ) : (
                             <div className="nav__item">
                                 <TextButton>
-                                    <Link to="/login">Connexion</Link>
+                                    <Link to="/login">Login</Link>
                                 </TextButton>
                             </div>
                         )}
@@ -71,8 +71,8 @@ const Navbar: React.FC<Props> = ({ user, uid }) => {
                             <Logo className="logo__main" />
                         </Link>
                         <div className="right">
-                            {location.pathname.includes("login") && 'Connexion'}
-                            {location.pathname.includes("register") && 'Inscription'}
+                            {location.pathname.includes("login") && 'Login'}
+                            {location.pathname.includes("register") && 'Register'}
                         </div>
                     </div>
                 </nav>
@@ -165,7 +165,7 @@ const NavContainer = styled.header`
                 height      : 36px;
                 width       : auto;
                 margin-left : 4px;
-                color       : var(--white);
+                color       : var(--primary);
             }
         }
 
@@ -175,7 +175,7 @@ const NavContainer = styled.header`
             justify-content : center;
             padding-left    : 25px;
             font-size       : 18px;
-            color           : var(--white);
+            color           : var(--text);
             border-left     : 2px solid var(--light-border);
         }
     }
